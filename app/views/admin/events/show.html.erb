@@ -3,5 +3,5 @@
 <p>
   <%= link_to "打開前台", event_path(@event), :target => "_blank", :class => "btn btn-primary" %>
 </p>
-
-<%= simple_format @event.description %>
+<h2><%= t(@event.status, :scope => "event.status") %></h2>
+<%= @event.description.html_safe %>
