@@ -23,6 +23,10 @@
 #   hello: "Hello world"
 
   "en":
+    registration:
+      status:
+        pending: pending
+        confirmed: confirmed
     bulk_update: Bundle edit
     bulk_delete: Bundle delete
     hello: "Hi %{name},"
