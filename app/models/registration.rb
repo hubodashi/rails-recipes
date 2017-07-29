@@ -2,7 +2,7 @@ class Registration < ApplicationRecord
   attr_accessor :current_step
   validates_presence_of :name, :email, :cellphone, :if => :should_validate_basic_data?
   validates_presence_of :name, :email, :cellphone, :bio, :if => :should_validate_all_data?
-  STATUS = ["pending", "confirmed"]
+  STATUS = ["pending", "confirmed", "cancalled"]
   validates_inclusion_of :status, :in => STATUS
   validates_presence_of :status, :ticket_id
   validate :check_event_status, :on => :create
@@ -12,7 +12,7 @@ class Registration < ApplicationRecord
   scope :by_status, ->(s){ where( :status => s ) }
   scope :by_ticket, ->(t){ where( :ticket_id => t ) }
   before_validation :generate_uuid, :on => :create
-
+  has_paper_trail
   def to_param
     self.uuid
   end

@@ -23,10 +23,18 @@
 #   hello: "Hello world"
 
   "en":
+    notification:
+      subject:
+        confirmed_registration: "Confirmed: %{name}"
+    user:
+      role:
+        admin: Admin
+        editor: Editor
     registration:
       status:
         pending: pending
         confirmed: confirmed
+        cancalled: cancalled
     bulk_update: Bundle edit
     bulk_delete: Bundle delete
     hello: "Hi %{name},"
