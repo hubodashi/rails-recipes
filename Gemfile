@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'https://gems.ruby-china.org'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -57,7 +57,10 @@ gem 'axlsx'
 gem 'axlsx_rails'
 gem 'premailer-rails'
 gem 'sidekiq'
+gem 'mysql2'
 group :development, :test do
+  gem 'capistrano-rails'
+  gem 'capistrano-passenger'
   gem 'rspec-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
